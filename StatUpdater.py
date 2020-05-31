@@ -36,10 +36,15 @@ class StatUpdater(object):
 
 		count = 1
 		cnt = 0
+		epoc = 29
 		for i in mat:
-			print("updating part" + count/15)
-			if cnt % 15 == 0:
-				time.sleep(100)
+			if cnt%epoc==0:
+					if cnt!=0:
+						print("100s sleep starting: part " + str(int(cnt/epoc)) + " updated")
+					else:
+						print("100s sleep starting: ensuring update doesnt overlap with API restrictions")
+					time.sleep(100)
+					print("100s sleep done: updating part " + str(1+int(cnt/epoc)))
 			count = count + 1
 			cnt = cnt + 1
 			self.sheet.update_cell(count,self.col_countries, i[0])
@@ -47,6 +52,3 @@ class StatUpdater(object):
 			self.sheet.update_cell(count,self.col_deaths, i[2])
 
 statupdate = StatUpdater('CoronavirusTracker')
-
-		
-
