@@ -10,6 +10,7 @@ AutoStatUpdater: trying to automate with Windows Task Scheduler to remove the re
 This is how the current output looks like:
 
 Console Output:
+
 ![Console Output](/corconsole.PNG)
 
 Google Sheets Output:
