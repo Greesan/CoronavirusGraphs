@@ -23,7 +23,7 @@ _Google Sheets Output:_
 1. Change AutoStatUpdater.py line 25: self.sheet = client.open('YourGoogleSheetsName').sheet1
 1. Run the AutoStatUpdater.py
 
-Same instructionss for <StatUpdater,AutoStatUpdater,AutoStatUpdater2>, but change the file that you make edits to.
+Same instructions for <StatUpdater,AutoStatUpdater,AutoStatUpdater2>, but change the file that you make edits to.
 
 Resources Used:
 
