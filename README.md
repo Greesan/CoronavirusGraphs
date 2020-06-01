@@ -7,6 +7,12 @@ AutoStatUpdater: automated at 4:50, requires the python script to be running in 
 
 AutoStatUpdater: trying to automate with Windows Task Scheduler to remove the requirement of the python script running in background indefinitely.
 
-![5/31/20 Data](/corgraphs.PNG)
+This is how the current output looks like:
+
+Console Output:
+![Console Output](/corconsole.PNG)
+
+Google Sheets Output:
+![Data as of 5/31/2020](/corgraphs.PNG)
 Steps to reimplement yourself:
 
