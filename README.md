@@ -7,5 +7,6 @@ AutoStatUpdater: automated at 4:50, requires the python script to be running in 
 
 AutoStatUpdater: trying to automate with Windows Task Scheduler to remove the requirement of the python script running in background indefinitely.
 
+![5/31/20 Data](/corgraphs.PNG)
 Steps to reimplement yourself:
 
