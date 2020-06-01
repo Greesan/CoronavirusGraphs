@@ -15,7 +15,7 @@ _Console Output:_
 
 _Google Sheets Output:_
 ![Data as of 5/31/2020](/corgraphs.PNG)
-Steps to reimplement yourself:
+# Steps to reimplement yourself:
 
 1. Create a google apis project + service account, enable sheets and drive api.
 1. Create the google sheet with headers, share with service account with edit access 
@@ -27,5 +27,6 @@ Same instructionss for <StatUpdater,AutoStatUpdater,AutoStatUpdater2>, but chang
 
 Resources Used:
 https://www.youtube.com/watch?v=x2r_RmvfzRo -> LucidProgramming
+
 https://www.youtube.com/watch?v=zF_DroDICaM -> JCharisTech & J-Secur1ty
 
