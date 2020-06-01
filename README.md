@@ -1,5 +1,5 @@
 # CoronavirusGraphs
-Learning how to webscrape using BeautifulSoup and Selenium, and using google sheets api to provide data-logging and graphing capabilities. Hopefully going to completely automate this to update the graph on a common schedule. This gives me a bit more info into how services like IFTTT provides similar programs (https://ifttt.com/applets/NFRkZeJu-automatically-create-a-discover-weekly-archive)
+Learning how to webscrape using BeautifulSoup and Selenium (future update), and using Google Sheets api to provide data-logging and graphing capabilities. Hopefully going to completely automate this to update the graph on a common schedule. This gives me a bit more info into how services like IFTTT provides similar programs (https://ifttt.com/applets/NFRkZeJu-automatically-create-a-discover-weekly-archive)
 
 StatUpdater: single run code, operates immediately
 
@@ -26,6 +26,7 @@ _Google Sheets Output:_
 Same instructionss for <StatUpdater,AutoStatUpdater,AutoStatUpdater2>, but change the file that you make edits to.
 
 Resources Used:
+
 https://www.youtube.com/watch?v=x2r_RmvfzRo -> LucidProgramming
 
 https://www.youtube.com/watch?v=zF_DroDICaM -> JCharisTech & J-Secur1ty
