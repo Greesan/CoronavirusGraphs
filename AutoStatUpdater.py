@@ -5,10 +5,10 @@ import requests
 import urllib.request
 import schedule
 import time
+import datetime
 from bs4 import BeautifulSoup
 
 
-currday = 0
 class AutoStatUpdater(object):
 	mat = []
 	col_countries = 1
@@ -23,7 +23,7 @@ class AutoStatUpdater(object):
 		soup= BeautifulSoup(src, 'lxml')
 		table = soup.find('table')
 		table_rows = table.find_all('tr')
-		
+		date = datetime.datetime.today()
 		scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 		creds = ServiceAccountCredentials.from_json_keyfile_name('CoronavirusTracking.json', scope)
 		client = gspread.authorize(creds)
@@ -39,8 +39,9 @@ class AutoStatUpdater(object):
 				row[5] = row[5].replace('+','')
 				mat.append(row[1:3] + [row[4]] + [row[3]] + [row[5]])
 		print("updating spreadsheet")
-		global currday
-		currday = currday + 1
+		f = open('daytracker.txt','r')
+		currday = int(f.read())
+		f.close()
 		col_countries = 1
 		col_total_cases = 2
 		col_total_deaths = 3
@@ -50,6 +51,8 @@ class AutoStatUpdater(object):
 		count = 1
 		cnt = 0
 		if mat!=[]:
+			sheet.update_cell(count, col_new_cases, "New Cases("+ str(date)[5:10] + ")")
+			sheet.update_cell(count, col_new_deaths, "New Deaths("+ str(date)[5:10] + ")")
 			for i in mat:
 				if cnt%epoc==0:
 					if cnt!=0:
@@ -65,8 +68,12 @@ class AutoStatUpdater(object):
 				sheet.update_cell(count, col_total_deaths, i[2])
 				sheet.update_cell(count, col_new_cases, i[3])
 				sheet.update_cell(count, col_new_deaths, i[4])
-
+			print("finished all updates")
+			f = open('daytracker.txt','w')
+			f.write(str(currday+1))
+			f.close()
 	schedule.every().day.at("16:50").do(grabdata)
+
 
 	while True:
 		schedule.run_pending()
